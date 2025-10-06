@@ -29,6 +29,23 @@ public class var26991 {
 
 
 	private static double calcArrayW(long[] w, double valx, int i){
+		switch((int)w[i]) {
+			case 8: {
+				double chislit = Math.pow(valx / 0.25, valx);
+ 				double znam = 1.0 / 3 - Math.pow(valx * (valx + 1.0 / 2), valx);
+                        	return Math.cos(Math.pow(chislit / znam, 2));
+			}
+			case 6, 14, 16, 18: {
+				double powx = Math.pow(4 * (2.0 / 3 + valx), valx);
+				double sn = Math.sin(Math.cos(powx));
+				return sn;	
+			}
+			default: {
+				 double powx = Math.pow((valx + 3) / 24, 2);
+				 double sn = Math.sin(Math.atan(powx));
+				 return sn;
+			} 
+		}/*
 		if (w[i] == 8){
 			double chislit = Math.pow(valx / 0.25, valx);
 			double znam = 1.0 / 3 - Math.pow(valx * (valx + 1.0 / 2), valx);
@@ -36,14 +53,14 @@ public class var26991 {
 		}
 		else if (w[i] == 6 || w[i] == 14 || w[i] == 16 || w[i] == 18){
 			double powx = Math.pow(4 * (2.0 / 3 + valx), valx);
-			double sn = Math.cos(Math.sin(powx));
+			double sn = Math.sin(Math.cos(powx));
 			return sn;
 		}
 		else {
 			double powx = Math.pow((valx + 3) / 24, 2);
 			double sn = Math.sin(Math.atan(powx));
 			return sn;
-		}
+		}*/
 	}
 
 
